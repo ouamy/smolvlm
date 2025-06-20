@@ -33,6 +33,13 @@ smolvlm/
     └── ggml-org_SmolVLM2-2.2B-Instruct-GGUF_mmproj-SmolVLM2-2.2B-Instruct-Q8_0.gguf
 ```
 
+3. Copy all the .so files to /usr/local/lib and run ldconfig
+
+```bash
+sudo cp build/bin/lib*.so /usr/local/lib/
+sudo ldconfig
+```
+
 ---
 
 ## Run
