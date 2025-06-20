@@ -10,8 +10,8 @@ This project requires two large model files, which cannot be included directly d
 
 | Model              | Description          | Download Link                                                                                      |
 |--------------------|----------------------|--------------------------------------------------------------------------------------------------|
-| SmolVLM main model  | Core vision-language model weights | [Download here](https://drive.google.com/file/d/15ussrdsv4Y4pAA2741-JqSMpUs_CmxDJ/view?usp=drive_link) |
-| mmproj model       | Vision modality model (mmproj)      | [Download here](https://drive.google.com/file/d/1iG2p2Z4mUqdhSqhlxgItgBsQge6Z7d8X/view?usp=drive_link)      |
+| SmolVLM main model  | Core vision-language model weights | [Download here](https://drive.google.com/file/d/14hsZXbkM6iSo5wANdjt5su70saDCbReQ/view?usp=drive_link) |
+| mmproj model       | Vision modality model (mmproj)      | [Download here](https://drive.google.com/file/d/18_01L9kV1MW1j611QLRfwyC2DDUsiVZ5/view?usp=drive_link)      |
 
 ---
 
@@ -29,8 +29,8 @@ cd smolvlm
 ```bash
 smolvlm/
 └── models/
-    ├── ggml-org_SmolVLM2-2.2B-Instruct-GGUF_SmolVLM2-2.2B-Instruct-Q4_K_M.gguf
-    └── ggml-org_SmolVLM2-2.2B-Instruct-GGUF_mmproj-SmolVLM2-2.2B-Instruct-Q8_0.gguf
+    ├── SmolVLM-500M-Instruct-f16.gguf
+    └── mmproj-SmolVLM-500M-Instruct-f16.gguf
 ```
 
 3. Copy all the .so files to /usr/local/lib and run ldconfig
@@ -47,8 +47,8 @@ sudo ldconfig
 Start the server with both models:
 ```bash
 build/bin/llama-server \
-    -m models/ggml-org_SmolVLM2-2.2B-Instruct-GGUF_SmolVLM2-2.2B-Instruct-Q4_K_M.gguf \
-    --mmproj models/ggml-org_SmolVLM2-2.2B-Instruct-GGUF_mmproj-SmolVLM2-2.2B-Instruct-Q8_0.gguf
+    -m models/SmolVLM-500M-Instruct-f16.gguf \
+    --mmproj models/mmproj-SmolVLM-500M-Instruct-f16.gguf
 ```
 
 This will start the server on:
